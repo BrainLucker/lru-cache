@@ -4,8 +4,8 @@ import code.ListItem.Item;
 
 public class LinkedCacheList implements CacheList {
 
-    private ListItem first = new ListItem();
-    private ListItem last = new ListItem();
+    private final ListItem first = new ListItem();
+    private final ListItem last = new ListItem();
     private int length = 0;
 
     @Override
@@ -73,6 +73,8 @@ public class LinkedCacheList implements CacheList {
             ListItem nextItem = first.getNext();
             nextItem.setPrev(item);
             first.setNext(item);
+            item.setPrev(first);
+            item.setNext(nextItem);
             length++;
         }
     }

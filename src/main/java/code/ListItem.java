@@ -57,7 +57,7 @@ public class ListItem {
     }
 
     public static class Key {
-        private String value;
+        private final String value;
 
         public Key(String key) {
             this.value = key;
