@@ -15,7 +15,7 @@ public class ListItem {
     }
 
     public Object getValue() {
-        return itemValue.value;
+        return itemValue.getValue();
     }
 
     public Item getItem() {
@@ -23,11 +23,11 @@ public class ListItem {
     }
 
     public void setValue(Object value) {
-        this.itemValue.value = value;
+        this.itemValue.setValue(value);
     }
 
     public Key getKey() {
-        return itemValue.key;
+        return itemValue.getKey();
     }
 
     public ListItem getNext() {
@@ -54,6 +54,18 @@ public class ListItem {
             this.value = value;
             this.key = key;
         }
+
+        public Key getKey() {
+            return key;
+        }
+
+        public Object getValue() {
+            return value;
+        }
+
+        public void setValue(Object value) {
+            this.value = value;
+        }
     }
 
     public static class Key {
@@ -61,6 +73,10 @@ public class ListItem {
 
         public Key(String key) {
             this.value = key;
+        }
+
+        public String getValue() {
+            return value;
         }
     }
 
